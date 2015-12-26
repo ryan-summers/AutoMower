@@ -18,15 +18,15 @@ beerpong.elf : main.o serial.o motors.o PID.o
 	$(CC) $(CFLAGS) $(BUILD_DIR)main.o $(BUILD_DIR)serial.o $(BUILD_DIR)motors.o $(BUILD_DIR)PID.o -o $(BUILD_DIR)$@ -l$(LIB_NAME)
 
 main.o : $(SRC_DIR)main.c
-	$(CC) $(CFLAGS) -c $(SRC_DIR)main.c -o $(BUILD_DIR)main.o 
+	$(CC) $(CFLAGS) -c $^ -o $(BUILD_DIR)$@
 
 serial.o : $(SRC_DIR)serial.c
-	$(CC) $(CFLAGS) -c $(SRC_DIR)serial.c -o $(BUILD_DIR)serial.o
+	$(CC) $(CFLAGS) -c $^ -o $(BUILD_DIR)$@
 
 motors.o : $(SRC_DIR)motors.c
-	$(CC) $(CFLAGS) -c $(SRC_DIR)motors.c -o $(BUILD_DIR)motors.o
+	$(CC) $(CFLAGS) -c $^ -o $(BUILD_DIR)$@
 
 PID.o : $(SRC_DIR)PID.c
-	$(CC) $(CFLAGS) -c $(SRC_DIR)PID.c -o $(BUILD_DIR)PID.o
+	$(CC) $(CFLAGS) -c $^ -o $(BUILD_DIR)$@
 
 $(shell mkdir -p $(BUILD_DIR))
