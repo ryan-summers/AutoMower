@@ -1,0 +1,3 @@
+[submodule "sublib"]
+	path = sublib
+	url = git@github.com:PalouseRobosub/SUBLIBinal_AVR.git
